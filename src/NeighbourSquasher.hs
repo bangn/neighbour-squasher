@@ -1,6 +1,11 @@
 module NeighbourSquasher
-       ( someFunc
-       ) where
+    ( squashNeighbourBy
+    )
+where
 
-someFunc :: IO ()
-someFunc = putStrLn ("someFunc" :: String)
+squashNeighbourBy :: Char -> String -> String
+squashNeighbourBy _        []            = []
+squashNeighbourBy _        [x          ] = [x]
+squashNeighbourBy squashBy (c : c' : cs) = if c == squashBy && c' == squashBy
+    then squashNeighbourBy squashBy (c' : cs)
+    else c : squashNeighbourBy squashBy (c' : cs)

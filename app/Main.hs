@@ -1,7 +1,6 @@
 module Main (main) where
 
-import NeighbourSquasher (someFunc)
-
+import NeighbourSquasher (squashNeighbourBy)
 
 main :: IO ()
-main = someFunc
+main = undefined
