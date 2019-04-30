@@ -3,10 +3,7 @@ module Main
     )
 where
 
-import NeighbourSquasher (squashNeighbourBy)
-import System.Environment (getArgs)
+import NeighbourSquasher (runSquashNeighbourBy)
 
 main :: IO ()
-main = do
-    (squashByArg : input : _) <- getArgs
-    putStr $ squashNeighbourBy (head squashByArg) input
+main = runSquashNeighbourBy
