@@ -4,7 +4,7 @@ module Main
 where
 
 import Data.Foldable (for_)
-import NeighbourSquasher (squashNeighbourBy)
+import NeighbourSquasher.Core (squashNeighbourBy)
 import Test.Hspec (Spec, describe, it, shouldBe)
 import Test.Hspec.Runner (configFastFail, defaultConfig, hspecWith)
 
