@@ -11,16 +11,13 @@ import Paths_neighbour_squasher as Meta (version)
 
 runSquashNeighbourBy :: IO ()
 runSquashNeighbourBy = execParser cliParser >>= \case
-    CliOptions squashBy input -> putStr $ squashNeighbourBy (head squashBy) input
+    CliOptions squashBy input -> putStr $ squashNeighbourBy squashBy input
 
-data CliOptions = CliOptions
-    { squashBy :: String
-    , input    :: String
-    }
+data CliOptions = CliOptions Char String
 
 cliParser :: ParserInfo CliOptions
 cliParser = info ( helper <*> versionP <*> cliOptionsP )
-    $ fullDesc <> progDesc "Squash repeated char"
+    $ fullDesc <> progDesc "Squash repeated char in a string"
 
 versionP :: Parser (a -> a)
 versionP = infoOption cliVersion
@@ -33,12 +30,12 @@ cliVersion = showVersion Meta.version
 
 cliOptionsP :: Parser CliOptions
 cliOptionsP = CliOptions
-    <$> strOption
+    <$> option auto
         ( long "squash-by"
          <> short 's'
-         <> metavar "SQUASHBY"
+         <> metavar "SQUASH_BY"
          <> showDefault
-         <> value " "
+         <> value ' '
          <> help "Character to squash by" )
     <*> strOption
         ( long "input"
