@@ -101,6 +101,7 @@ test-suite neighbour-squasher-test
   build-depends:       base ^>= 4.12.0.0
                      , hspec ^>= 2.7.1
                      , neighbour-squasher
+                     , hedgehog >= 1.0
 
   ghc-options:         -Wall
                        -threaded
