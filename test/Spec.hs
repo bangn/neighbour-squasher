@@ -24,47 +24,47 @@ data Case = Case { description :: String
                  }
 
 cases :: [Case]
-cases =
-    [ Case
+cases
+    = [ Case
           { description = "returns empty string if input is empty"
           , squashBy    = ' '
           , input       = ""
           , expected    = ""
           }
-    , Case
+      , Case
           { description = "returns input if it contains only one character"
           , squashBy    = '_'
           , input       = "x"
           , expected    = "x"
           }
-    , Case
+      , Case
           { description = "returns input if it does not contains character to squash"
           , squashBy    = '_'
           , input       = "xy"
           , expected    = "xy"
           }
-    , Case
-          { description = "squashes input"
+      , Case
+          { description = "squashes leading spaces"
           , squashBy    = ' '
           , input       = "  y"
           , expected    = " y"
           }
-    , Case
-          { description = "squashes input"
+      , Case
+          { description = "squashes more than 3 leading spaces"
           , squashBy    = ' '
           , input       = "   y"
           , expected    = " y"
           }
-    , Case
-          { description = "squashes input"
+      , Case
+          { description = "squashes infix spaces"
           , squashBy    = ' '
           , input       = "x    y"
           , expected    = "x y"
           }
-    , Case
-          { description = "squashes input"
+      , Case
+          { description = "squashes infix space and trailing spaces"
           , squashBy    = ' '
           , input       = "x    y   "
           , expected    = "x y "
           }
-    ]
+      ]
