@@ -2,3 +2,11 @@ resolver: lts-13.16
 
 ghc-options:
   "$locals": -fhide-source-paths
+
+extra-deps:
+  - extra-1.6.15
+  - hspec-2.7.1
+  - hspec-core-2.7.1
+  - hspec-discover-2.7.1
+  - QuickCheck-2.13.1
+  - hedgehog-1.0

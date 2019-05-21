@@ -1,7 +1,6 @@
 module Main
-    ( main
-    )
-where
+  ( main
+  ) where
 
 import NeighbourSquasher (runSquashNeighbourBy)
 
