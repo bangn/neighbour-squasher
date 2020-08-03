@@ -1,0 +1,15 @@
+---
+
+name: release-binary
+
+on:
+  - push
+
+jobs:
+  greeting:
+    name: greeting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: |
+          echo "Hello Github Actions"
